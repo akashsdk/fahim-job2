@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 import "./Home.css";
@@ -74,7 +74,6 @@ class Home extends Component {
     const fileInput = event.target;
     const files = fileInput.files;
 
-    // Convert the FileList into an array and update the state
     this.setState({
       images: [...this.state.images, ...Array.from(files)],
     });
