@@ -131,23 +131,12 @@ class Home extends Component {
                     )}
                   </Draggable>
                 ))}
-                <input
-                  type="image"
-                  className="homeImageUpkoder"
-                  multiple
-                  onChange={this.handleImageSelect}
-                />
+                <input type="file" multiple onChange={this.handleImageSelect} />
                 {provided.placeholder}
               </div>
             )}
           </Droppable>
         </DragDropContext>
-
-        <input type="file" multiple onChange={this.handleImageSelect} />
-
-        <p>Selected Images: {selectedImages.length}</p>
-
-        <input type="file" accept="image/*" onChange={this.handleImageSelect} />
       </div>
     );
   }
