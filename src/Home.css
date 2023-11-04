@@ -64,12 +64,6 @@ button {
 button svg {
   margin-right: 5px;
 }
-.homeImageUpkoder {
-  height: 100px;
-  width: 100px;
-  border: 2px solid rgb(163, 163, 163);
-  background: #f0f6fd;
-}
 
 @media only screen and (max-width: 1300px) {
   .homeHederButton {
