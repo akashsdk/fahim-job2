@@ -1,3 +1,30 @@
+.homeHederBox{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+}
+.homeHederText{
+    margin-left: 40px;
+}
+.homeHederButton{
+    color: #ff0000;
+    border: none;
+    background-color: transparent;
+    margin-left: 80%;
+}
+.homeHederButton:hover{
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+
+
+
+
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -15,11 +42,14 @@
     height: 100px;
     border: 2px solid rgb(163, 163, 163);
     background: #f0f6fd;
-    transition: border-color 0.3s ease-in-out;
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
   }
   
   .image:hover {
     background: rgb(113, 113, 113);
+    opacity: .5;
   }
   
   .selected {
@@ -39,4 +69,23 @@
   button svg {
     margin-right: 5px;
   }
+
+  @media only screen and (max-width: 1300px) {
+    .homeHederButton{
+      
+        margin-left: 75%;
+    }
+  }
   
+  @media only screen and (max-width: 800px) {
+    .homeHederButton{
+      
+        margin-left: 60%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .homeHederButton{
+      
+        margin-left: 40%;
+    }
+  }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { DragDropContext, Droppable, Draggable, } from "react-beautiful-dnd";
-import { FaTrash } from "react-icons/fa";
+
 import "./Home.css";
 
 import img1 from "./Img/image-1.webp";
@@ -70,12 +70,16 @@ class Home extends Component {
 
   render() {
     const { selectedImages } = this.state;
+
     return (
       <div>
-        <div>heder</div>
-        <button onClick={this.deleteSelectedImages}>
-          <FaTrash /> Delete Selected
+        <div className="homeHederBox">
+        <h3 className="homeHederText">  {selectedImages.length} File Selected</h3>
+        <button className="homeHederButton" onClick={this.deleteSelectedImages}>
+          Delete File
         </button>
+        </div>
+        
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId="imageGallery" direction="horizontal">
             {(provided) => (
@@ -87,6 +91,7 @@ class Home extends Component {
                 {this.state.images.map((image, index) => (
                   <Draggable key={image} draggableId={image} index={index}>
                     {(provided, snapshot) => (
+
                       <div
                         className={`image-item ${
                           snapshot.isDragging ? "dragging" : ""
@@ -104,11 +109,17 @@ class Home extends Component {
                           onClick={() => this.toggleImageSelection(image)}
                         >
                           <img height={100} src={image} alt={image} />
+                          
                         </div>
+                        
+                        
                       </div>
                     )}
+                    
                   </Draggable>
+                  
                 ))}
+                <input type="image" multiple onChange={this.handleImageSelect} />
                 {provided.placeholder}
               </div>
             )}
@@ -116,7 +127,9 @@ class Home extends Component {
         </DragDropContext>
 
         <input type="file" multiple onChange={this.handleImageSelect} />
+        
         <p>Selected Images: {selectedImages.length}</p>
+        
       </div>
     );
   }
