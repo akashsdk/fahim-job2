@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { DragDropContext, Droppable, Draggable, } from "react-beautiful-dnd";
 
 import "./Home.css";
@@ -14,6 +14,9 @@ import img8 from "./Img/image-8.webp";
 import img9 from "./Img/image-9.webp";
 import img11 from "./Img/image-11.jpeg";
 import img12 from "./Img/image-10.jpeg";
+
+
+
 
 const items = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img12, img11];
 
@@ -68,8 +71,20 @@ class Home extends Component {
     });
   };
 
+
+
+
+
+
+
+
+
+
+  
   render() {
     const { selectedImages } = this.state;
+
+    
 
     return (
       <div>
@@ -119,7 +134,7 @@ class Home extends Component {
                   </Draggable>
                   
                 ))}
-                <input type="image" multiple onChange={this.handleImageSelect} />
+                <input type="image" className="homeImageUpkoder" multiple onChange={this.handleImageSelect} />
                 {provided.placeholder}
               </div>
             )}
@@ -129,6 +144,13 @@ class Home extends Component {
         <input type="file" multiple onChange={this.handleImageSelect} />
         
         <p>Selected Images: {selectedImages.length}</p>
+
+
+        <input
+        type="file"
+        accept="image/*"
+        onChange={this.handleImageSelect}
+      />
         
       </div>
     );
