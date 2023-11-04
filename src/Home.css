@@ -13,16 +13,17 @@
   .image {
     width: 100px;
     height: 100px;
-    border: 2px solid transparent;
+    border: 2px solid rgb(163, 163, 163);
+    background: #f0f6fd;
     transition: border-color 0.3s ease-in-out;
   }
   
   .image:hover {
-    background-color: rgb(113, 113, 113);
+    background: rgb(113, 113, 113);
   }
   
   .selected {
-    border-color: #007BFF;
+    border-color: #ff5a5a;
   }
   
   .dragging {

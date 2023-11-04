@@ -1,9 +1,21 @@
 import React, { Component } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable, } from "react-beautiful-dnd";
 import { FaTrash } from "react-icons/fa";
 import "./Home.css";
 
-const items = ["Image1.jpg", "Image2.jpg", "Image3.jpg", "Image4.jpg"];
+import img1 from "./Img/image-1.webp";
+import img2 from "./Img/image-2.webp";
+import img3 from "./Img/image-3.webp";
+import img4 from "./Img/image-4.webp";
+import img5 from "./Img/image-5.webp";
+import img6 from "./Img/image-6.webp";
+import img7 from "./Img/image-7.webp";
+import img8 from "./Img/image-8.webp";
+import img9 from "./Img/image-9.webp";
+import img11 from "./Img/image-11.jpeg";
+import img12 from "./Img/image-10.jpeg";
+
+const items = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img12, img11];
 
 class Home extends Component {
   state = {
@@ -60,6 +72,7 @@ class Home extends Component {
     const { selectedImages } = this.state;
     return (
       <div>
+        <div>heder</div>
         <button onClick={this.deleteSelectedImages}>
           <FaTrash /> Delete Selected
         </button>
@@ -90,8 +103,7 @@ class Home extends Component {
                           }`}
                           onClick={() => this.toggleImageSelection(image)}
                         >
-                          <img src={image} alt={image} />
-                          
+                          <img height={100} src={image} alt={image} />
                         </div>
                       </div>
                     )}
